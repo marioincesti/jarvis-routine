@@ -1,17 +1,50 @@
 #!/bin/bash
-# Here you can define translations to be used in the plugin functions file
-# the below code is an sample to be reused:
-# 1) uncomment to function below
-# 2) replace XXX by your plugin name (short)
-# 3) remove and add your own translations
-# 4) you can the arguments $2, $3 passed to this function
-# 5) in your plugin functions.sh file, use it like this:
-#      say "$(pv_myplugin_lang the_answer_is "oui")"
-#      => Jarvis: La réponse est oui
+# Here you can create functions which will be available from the commands file
+# You can also use here user variables defined in your config file
+# To avoid conflicts, name your function like this
+# pg_XX_myfunction () { }
+# pg for PluGin
+# XX is a short code for your plugin, ex: ww for Weather Wunderground
+# You can use translations provided in the language folders functions.sh
+jv_pg_oroscopo () {
 
-#pv_XXX_lang () {
-#    case "$1" in
-#        i_check) echo "Je regarde...";;
-#        the_answer_is) echo "La réponse est $2";;
-#    esac
-#} 
+raw="curl \"http://it.horoscopofree.com/rss/horoscopofree-it.rss\"  2>/dev/null | grep \"<description>\" | tail -n 12|sed -e \"s/.*\<description\>\(.*\)\<a\ href.*\<\/description\>.*/»\ \1/g\" | cut -c 12- "
+case "$1" in
+'ariete')
+echo $(eval $raw | sed -n '1p')
+;;
+'toro')
+echo $(eval $raw | sed -n '2p')
+;;
+'gemelli')
+echo $(eval $raw | sed -n '3p')
+;;
+'cancro')
+echo $(eval $raw | sed -n '4p')
+;;
+'leone')
+echo $(eval $raw | sed -n '5p')
+;;
+'vergine')
+echo $(eval $raw | sed -n '6p')
+;;
+'bilancia')
+echo $(eval $raw | sed -n '7p')
+;;
+'scorpione')
+echo $(eval $raw | sed -n '8p')
+;;
+'saggitario')
+echo $(eval $raw | sed -n '9p')
+;;
+'capricorno')
+echo $(eval $raw | sed -n '10p')
+;;
+'acquario')
+echo $(eval $raw | sed -n '11p')
+;;
+'pesci')
+echo $(eval $raw | sed -n '12p')
+;;
+esac
+}

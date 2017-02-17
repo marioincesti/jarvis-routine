@@ -1,1 +1,1 @@
-*oroscopo ( * )*==say "Ecco l'oroscopo per (1)" && say "$(jv_pg_oroscopo "(1)")"
+*oroscopo (*)*==say "Ecco l'oroscopo per (1)" && say "$(jv_pg_oroscopo "(1)")"
