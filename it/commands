@@ -1,5 +1,5 @@
 *buongiorno*|*buon giorno*|*ciaoo*==say "Ciao $username, svegliato bene?"
 >*bene*|*si*|*ben*|*benne*==say "Mi fa piacere, posso iniziare la giornata?"
->>*si*grazie*|*cert*|*grazie*==say && jv_pg_gmail && say "Il prezzo del bitcoin è $(jv_pg_bitcoin) dollari." && say "Uno zeta chesh vale $(jv_pg_zecbtc) bit coin, $(jv_pg_zecusd) dollari." && say "Le notizie che riguardano l'inter: $(jv_pg_news "Inter")" && say "il tuo oroscopo di oggi: $(jv_pg_oroscopo "ariete")."&& say "Il meteo oggi: $(jv_pg_weather_2d)" 
+>>*si*grazie*|*cert*|*grazie*==say && jv_pg_gmail && say "Il prezzo del bitcoin è $(jv_pg_bitcoin) dollari." && say "Uno zeta chesh vale $(jv_pg_zecbtc) bit coin, $(jv_pg_zecusd) dollari." && say "Ora le notizie che riguardano l'inter. $(jv_pg_news "Inter")" && say "il tuo oroscopo di oggi: $(jv_pg_oroscopo "ariete")."&& say "Infine Il meteo oggi. $(jv_pg_weather_2d)" 
 >>no==say "Ok, chiamami se vuoi..."
 >*male*|*no|*bona*==say "Mi dispiace, chiamami se vuoi..."
