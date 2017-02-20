@@ -1,4 +1,4 @@
-*buongiorno*|*ciaoo*==say "Ciao $username, svegliato bene?"
+*buongiorno*|*buon giorno*|*ciaoo*==say "Ciao $username, svegliato bene?"
 >*bene*==say "Mi fa piacere, posso iniziare la giornata?"
 >>*si*==say && jv_pg_gmail && say "Il prezzo del bitcoin è $(jv_pg_bitcoin) dollari." && say "Uno zeta chesh vale $(jv_pg_zecbtc) bit coin, $(jv_pg_zecusd) dollari." && say "Le notizie che riguardano l'inter: $(jv_pg_news "Inter")" && say "il tuo oroscopo di oggi: $(jv_pg_oroscopo "ariete")."&& say "Il meteo oggi: $(jv_pg_weather_2d)" 
 >>no==say "Ok, chiamami se vuoi..."
